@@ -20,7 +20,7 @@
             <tr>
               <th><button class="btn btn-primary"
                 (click)="toggleImage()">
-                {{toShowImage ? "Hide" : "Show"}} Image
+                {{toShowImage ? "Hide" : "Show"}} Images
                 </button></th>
               <th>Product</th>
               <th>Code</th>
@@ -35,7 +35,8 @@
                 [src]='product.imageUrl' 
                 [style.width.px]='imageWidth'
                 [style.margin.px]='imageMargin'></td>
-              <td>{{product.productName}}</td>
+              <td><a class="nav-link" [routerLink]="['/products', product.productId]">
+                {{product.productName}}</a></td>
               <td>{{product.productCode | lowercase}}</td>
               <td>{{product.releaseDate}}</td>
               <td>{{product.price | currency:'USD' | lowercase}}</td>
